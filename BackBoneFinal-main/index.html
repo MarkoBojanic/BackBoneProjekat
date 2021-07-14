@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javni imenik</title>
+	<link href="css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+</head>
+<body>
+
+	<div class="aboveBar">
+        <p>BUDITE ODGOVORNI</p>
+    </div>
+    <nav class="navbar">
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+        </a>
+        <ul class="main-menu">
+            <li><a href="#">Pocetna</a></li>
+            <li><a href="#futer">Zastita podataka</a></li>
+            <li><a href="ourCollection.html">Svrha</a></li>
+            <li><a href="index4.html">Kontakt</a></li>
+            <li><a href="index3.html" target="_target">FAQ</a></li>
+        </ul>
+        <a href="#" class="navLogo"><img src="../slike-videi/LOGO3.png" alt=""></a>
+
+        <ul class="navbar-icons">
+            <li><i class="fas fa-search"></i></li>
+            <li><i class="fas fa-user"></i></li>
+        </ul>
+	</nav>
+	
+	
+	<div id="wrapper">
+		<h1>Javni imenik</h1>
+		<div class="tools">
+			Pretraži:<br/>
+            <input type="text" id="searchBox" placeholder="Search..." />
+            <a href="dodaj.html" target="_blank" class="btn">DODAJ</a>
+            <br/><br/>
+			Filter:
+			<div id="filters"></div>
+			<div id="count"></div>
+		</div>
+		<ul id="listing"></ul>
+	</div>
+	
+	<script type="text/template" id="person-template">
+		<span class="list-header"><%= ime %> <%= prezime %> (<%= type %>)
+			<div class="izmeniObrisi">
+		<button class="dugme1">izmeni</button>
+		<button class="dugme2">obrisi</button>
+			</div>
+		</span>
+		<div class="details">
+			JMBG: <%= jmbg %><br/>
+			Godina rodjenja: <%= godinarodjenja %><br/>
+			Mesto stanovanja: <%= mestostanovanja %><br/>
+			Adresa stanovanja: <%= adresastanovanja %><br/>
+			Broj clanova porodice: <%= brojclanovaporodice %><br/>
+			Broj telefona: <%= brojtelefona %><br/>
+			Email adrasa: <a href="mailto:<%= emailadresa %>"><%= emailadresa %></a>
+		</div>
+	</script>
+
+	<div class="footer" id="futer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text">Javni<span>Imenik</span></h1>
+                <p>
+                    Naša misija je da svakom čoveku omogućimo da pronađe bilo koju drugu osobu u svom mestu. Mi to radimo
+                    stvaranjem revolucionarnih tehnoloških inovacija,
+                    čineći naše softvere održivim, do
+                    izgradnje kreativnog i raznovrsnog globalnog tima
+                    i izradom pozitivnog
+                    uticaja u zajednicama u kojima živimo i radimo.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 381-315-389</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@javniImenik.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Prečice</h2>
+                <ul>
+                    <a href="#">
+                        <li>Događaji</li>
+                    </a>
+                    <a href="#">
+                        <li>Tim</li>
+                    </a>
+                    <a href="#">
+                        <li>Glavni odgovorni</li>
+                    </a>
+                    <a href="#">
+                        <li>Galerija</li>
+                    </a>
+                    <a href="#">
+                        <li>Prava i zakoni</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h2>Pišite nam</h2>
+                <br>
+                <form action="indexNaslovna.html" method="post">
+                    <input type="email" name="email" class="text-input contact-input"
+                        placeholder="Vaša imejl adresa...">
+                    <textarea name="message" class="text-input contact-input" placeholder="Vaša poruka..."></textarea>
+                    <button type="submit" class="btn btn-big">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Javni imenik | Designed by Marko, Danilo and Jovana
+        </div>
+    </div>
+	
+	<script src="js/data.json" type="text/javascript"></script>
+	
+	<script src="js/libs/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/libs/underscore-min.js" type="text/javascript"></script>
+	<script src="js/libs/backbone-min.js" type="text/javascript"></script>
+	
+	<script src="js/routers/router.js" type="text/javascript"></script>
+	<script src="js/models/person-model.js" type="text/javascript"></script>
+	<script src="js/views/person-views.js" type="text/javascript"></script>
+	
+	<script src="js/app.js" type="text/javascript"></script>
+	
+	
+</body>
+</html>
